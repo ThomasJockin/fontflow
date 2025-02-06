@@ -1,5 +1,4 @@
 "use client"
-import lodash from "lodash";
 import {useData} from './DataProvider.jsx'
 
 function Token ({category}) {
