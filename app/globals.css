@@ -140,7 +140,7 @@ display: block;
 }
 
 .upload-box-show {
-    visibility: visible;
+    display: block;
     width: 250px;
     height: 100%;
     padding: 1rem;
@@ -153,7 +153,8 @@ display: block;
 }
 
 .upload-box-hide {
-    visibility: collapse;
+    visibility: hidden;
+    display: none;
     width: 250px;
     height: 100%;
     padding: 1rem;
