@@ -15,6 +15,7 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "FontFlow Sprints",
   description: "Get in the font-pairing flow in 90 minute sprints",
+    viewport: "width=device-width, initial-scale=1"
 };
 
 
