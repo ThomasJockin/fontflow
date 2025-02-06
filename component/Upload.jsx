@@ -3,7 +3,7 @@ import supabase from "../lib/supabase.js"
 import {useData} from "./DataProvider.jsx";
 import {useSearchParams, useRouter} from "next/navigation";
 import {useState} from "react";
-import roli from "roli";
+import randomName from "@scaleway/random-name";
 
 function WorkUpload() {
     const {data}=useData();
@@ -14,9 +14,7 @@ function WorkUpload() {
     async function upload(event){ 
         setStatus(true);
         const file = event.target.files[0]
-        const imgName = roli({
-            separator: '_', case:"lower",words:3
-        })
+        const imgName = randomName()
         const fileType = file.type.replace("image/","."); 
         const uploadName = `${imgName}${fileType}`
         const fileupload = await supabase.storage.from('uploads').upload(uploadName, file)
