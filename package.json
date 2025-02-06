@@ -1,0 +1,34 @@
+{
+  "name": "fontprompt",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.48.1",
+    "lodash": "^4.17.21",
+    "ms": "^2.1.3",
+    "next": "15.1.4",
+    "pretty-ms": "^9.2.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "roli": "^0.3.0",
+    "usehooks-ts": "^3.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "22.10.7",
+    "@types/react": "19.0.7",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "typescript": "5.7.3"
+  },
+  "overrides": {
+    "usehooks-ts": {
+      "react": "^19"
+    }
+  }
+}
