@@ -91,7 +91,7 @@ label {
     justify-content: space-between;
     gap: 2px;
     
-    @media (max-width:1080px)
+    @media screen and (max-width:1080px)
     {
         
     flex-direction: column;
@@ -242,7 +242,7 @@ div.level ul {
     place-self: center;
     width: 100%;
     
-    @media(max-width: 1020px) {
+    @media screen and (max-width: 1020px) {
         flex-direction: column;
         padding-left: 1rem;
         padding-right: 1rem;
@@ -252,7 +252,7 @@ div.level ul {
 
 div.level li{
     width: 33%;
-    @media(max-width:1020px){
+    @media screen and (max-width:1020px){
         width:80%;
         place-self: center;
     }
@@ -268,9 +268,9 @@ h1 {
       -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: lightgrey;
     
-    @media(max-width:1020px) {
-        font-size: 6rem;
-        line-height: 6rem;
+    @media screen and (max-width:1020px) {
+        font-size: 5rem;
+        line-height: 5rem;
     }
 }
 
