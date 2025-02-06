@@ -15,25 +15,23 @@ function Timer(){
     
 const [count, {startCountdown, stopCountdown, resetCountdown}] = 
       useCountdown(
-          {countStart:ms("90m"),
-           intervalMs:0.00000001
-           })
+          {countStart:ms("90m")/1000})
 
 let timerColor
         switch(true){
             case isRunning == false:
                 timerColor="pause"
                 break
-            case count === ms("90m"):
+            case count * 1000 === ms("90m"):
                 timerColor= "timer-start"
                 break
-            case count >= ms("61m"):
+            case count * 1000 >= ms("61m"):
                 timerColor= "rd1"
                 break
-            case count >= ms("30m"):
+            case count * 1000 >= ms("30m"):
                 timerColor= "rd2"
                 break
-            case count >= ms("29m"):
+            case count * 1000 >= ms("29m"):
                 timerColor= "rd3"
                 break
             default: 
@@ -50,7 +48,7 @@ let timerColor
     
     
 const showUpload = 
-        count ===ms("90m") ? "upload-box-hide":
+        count * 1000 ===ms("90m") ? "upload-box-hide":
         "upload-box-show";
 
     
@@ -74,7 +72,7 @@ const showUpload =
 
 return (
     <div className="timercontainer">
-        <div className="timer"><span className={timerColor}>{prettyMilliseconds(count,{colonNotation: true, secondsDecimalDigits:0})}</span></div>
+        <div className="timer"><span className={timerColor}>{prettyMilliseconds(count*1000,{colonNotation: true, secondsDecimalDigits:0})}</span></div>
         <div>
       <button className={isRunning  ? "active": "unActive"} onClick={start}>start</button>
             
