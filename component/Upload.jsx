@@ -11,33 +11,38 @@ function WorkUpload() {
    const router = useRouter();
     const level = sp.get("level") || 1;
     const [loading,setStatus] = useState(false)
-    async function upload(event){ 
+    async function upload(currentData){ 
+        const snapShot= { 
+                level:level,
+                chunk: currentData.chunk,
+                relation: currentData.relation,
+                layout: currentData.layout,
+                attribute: currentData.attribute,
+                header_font:currentData.headerfont,
+                subhead_font:currentData.subheadfont,
+                vibe:currentData.vibe,
+                action:currentData.action,
+                font_property:currentData.fontProperity,
+                lang_object:currentData.langObject,
+                content:currentData.content,
+                timer_started_at: currentData.timer_started_at
+                        }
         setStatus(true);
         const file = event.target.files[0]
         const imgName = randomName()
         const fileType = file.type.replace("image/","."); 
         const uploadName = `${imgName}${fileType}`
         const fileupload = await supabase.storage.from('uploads').upload(uploadName, file)
-        const result = await supabase.from("fontprompts").insert(
-            {
-                level:level,
-                chunk: data.chunk,
-                relation: data.relation,
-                layout: data.layout,
-                attribute: data.attribute,
-                header_font:data.headerfont,
-                subhead_font:data.subheadfont,
-                vibe:data.vibe,
-                action:data.action,
-                font_property:data.fontProperity,
-                lang_object:data.langObject,
-                content:data.content,
-                timer_started_at: data.timer_started_at,
+        
+        const newRecord = Object.assign(snapShot, {
+               
                 img_url: `https://brkglddslfqgpfptphbm.supabase.co/storage/v1/object/public/uploads/${uploadName}`
-            }
-        )
+            })
+        console.log({newRecord})
+        const result = await supabase.from("fontprompts").insert(newRecord).select()
+        console.log({result})
         setStatus(false);
-        await router.refresh();
+        //await router.refresh();
     }
     
     
@@ -46,7 +51,8 @@ function WorkUpload() {
         <label className="lv-1" htmlFor="file">  {
                 loading == true ? "Uploading": "Upload your Work"
             }</label>
-        <input className="custom-file-input" id ="file" type="file" onChange={upload} /> 
+        <input className="custom-file-input" id ="file" type="file" onChange={()=>upload(data)} /> 
+            
             </div>
     )
     

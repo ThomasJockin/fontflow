@@ -1,5 +1,5 @@
 "use client"
-import React, {createContext, useContext, useState, useEffect} from "react";
+import React, {createContext, useContext, useState, useEffect, useMemo} from "react";
 import lodash from "lodash";
 
 const DataContext = createContext();
@@ -83,20 +83,22 @@ const options = {
         
 export const DataProvider = ({children}) => {
     //reads the data
-    const [data, setData] = useState(
-    {chunk:lodash.sample(options.chunk), 
-     relation: lodash.sample(options.ratioOptions), 
-     layout: lodash.sample(options.layoutOptions), attribute:lodash.sample(options.fontProperity), headerfont:lodash.sample(options.fontOptions), subheadfont:lodash.sample(options.fontOptions), vibe:lodash.sample(options.vibeOptions), action:lodash.sample(options.actionOptions), fontProperity:lodash.sample(options.fontProperity), langObject:lodash.sample(options.sentenceOptions), content:lodash.sample(options.contentOptions)})
+    const [data, setData] = useState(randomSelect)
     //writes the data
     function randomSelect() {
-    setData(
-    {chunk:lodash.sample(options.chunk), relation: lodash.sample(options.ratioOptions), layout: lodash.sample(options.layoutOptions), attribute:lodash.sample(options.fontProperity), fonts:lodash.sample(options.fontOptions), vibe:lodash.sample(options.vibeOptions), action:lodash.sample(options.actionOptions), fontProperity:lodash.sample(options.fontProperity), langObject:lodash.sample(options.sentenceOptions), content:lodash.sample(options.contentOptions)}
+    return(
+    {chunk:lodash.sample(options.chunk), 
+     relation: lodash.sample(options.ratioOptions), 
+     layout: lodash.sample(options.layoutOptions), attribute:lodash.sample(options.fontProperity), headerfont:lodash.sample(options.fontOptions), subheadfont:lodash.sample(options.fontOptions), vibe:lodash.sample(options.vibeOptions), action:lodash.sample(options.actionOptions), fontProperity:lodash.sample(options.fontProperity), langObject:lodash.sample(options.sentenceOptions), content:lodash.sample(options.contentOptions)}
     );
     };
 
         // we're creating an object, thr left is the name of the variable, the right side is the function name
     
-    const stuff = {data:data, setData:setData}
+    const stuff = useMemo(
+    () => {return({data:data, setData:setData})}, 
+        [data]
+    )
     return (
     <DataContext.Provider value = {stuff}>
           {children}
