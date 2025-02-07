@@ -5,7 +5,7 @@ function Token ({category}) {
     const {data}= useData()
     const item = data[category]
 return (
-    <span suppressHydrationWarning className="item">{item}</span>
+    <span className="item">{item}</span>
     )
 };
 

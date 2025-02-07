@@ -13,7 +13,7 @@ return (
     
     <ul>
     
-  <li suppressHydrationWarning className="item">{item}</li>
+  <li className="item">{item}</li>
     <li>available at Google Fonts</li>
       </ul>
     </span>

@@ -83,24 +83,28 @@ const options = {
         
 export const DataProvider = ({children}) => {
     //reads the data
-    const [data, setData] = useState(randomSelect)
+    const [data, setData] = useState({})
     //writes the data
     function randomSelect() {
-    return(
+    setData(
     {chunk:lodash.sample(options.chunk), 
      relation: lodash.sample(options.ratioOptions), 
      layout: lodash.sample(options.layoutOptions), attribute:lodash.sample(options.fontProperity), headerfont:lodash.sample(options.fontOptions), subheadfont:lodash.sample(options.fontOptions), vibe:lodash.sample(options.vibeOptions), action:lodash.sample(options.actionOptions), fontProperity:lodash.sample(options.fontProperity), langObject:lodash.sample(options.sentenceOptions), content:lodash.sample(options.contentOptions)}
     );
     };
 
+    
+    useEffect(randomSelect, []);
+    
+    
         // we're creating an object, thr left is the name of the variable, the right side is the function name
     
-    const stuff = useMemo(
-    () => {return({data:data, setData:setData})}, 
-        [data]
-    )
+    //const stuff = useMemo(
+    //() => {return({data:data, setData:setData})}, 
+        //[data]
+    //)
     return (
-    <DataContext.Provider value = {stuff}>
+    <DataContext.Provider value = {{data,setData}}>
           {children}
     </DataContext.Provider>
     

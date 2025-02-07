@@ -7,7 +7,7 @@ function Content({}){
     const item = data.chunk
     return(
         <div className="content-display">
-<span suppressHydrationWarning >{item}</span>
+<span>{item}</span>
          </div>
     )
 
