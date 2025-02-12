@@ -69,8 +69,10 @@ export async function POST(request) {
 
 try {
     const ideogram = await fetch(url, options);
-    const {data} = await ideogram.json();
-    const ideogram_img = await fetch(data[0].url);
+    console.log(ideogram.status);
+    const ideogram_result = await ideogram.json();
+    console.log(ideogram_result);
+    const ideogram_img = await fetch(ideogram_result.data[0].url);
     console.log(ideogram_img);
     const file = await ideogram_img.blob();
     
