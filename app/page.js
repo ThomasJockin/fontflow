@@ -29,7 +29,7 @@ export default async function Home({searchParams}) {
       
       <div className="level">
       < span className="LvSelector"> <label> &#10113; Copy content to clipboard</label></span>
-      <p/><span className="content-display"><Content /></span> &#9639; 
+      <Content />
 
       </div>
       

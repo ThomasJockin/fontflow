@@ -42,15 +42,13 @@ function prompt_gather(data) {
     return `${persona}. Your task is to design the following artifact: ${poster}. ${headline}. ${subhead}. ${chunk}`
 } 
 
-export default prompt_gather
 
-export async function POST(request) {
-    const result = await request.json();
-    const collection = {...result.data, user_type:"ai"}
-    const prompt = prompt_gather(collection);
-    console.log({Testing:collection})
-    const url = 'https://api.ideogram.ai/generate';
-    const image_request =
+export async function POST(request) { 
+const result = await request.json();
+const collection = {...result.data, user_type:"ai"}
+const prompt = prompt_gather(collection);
+const url = 'https://api.ideogram.ai/generate';
+const image_request =
         
                     {"prompt":prompt,
         
@@ -58,9 +56,11 @@ export async function POST(request) {
                      "model":"V_2",
                      "magic_prompt_option":"ON",
                      "num_images": 1,
+                     "image_weight": 50,
                      "negative_prompt":"no logos and only use the content provided in the prompt. No illutrations",
                      "style_type":"DESIGN"}
-    const options = {
+
+const options = {
         method: 'POST',
         headers: {
             'Api-Key': process.env.IDEOGRAM_KEY, 
@@ -68,7 +68,6 @@ export async function POST(request) {
         
             body: JSON.stringify({image_request})
         };
-
 try {
     const ideogram = await fetch(url, options);
     console.log(ideogram.status);
@@ -84,6 +83,7 @@ return Response.json({aiGen});
   console.error(error);
 return Response.json({error});
 }
+    
 };
 
 export const maxDuration = 60

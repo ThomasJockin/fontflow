@@ -7,7 +7,7 @@ function Content({}){
     const item = data.chunk || "loading"
     return(
         <div className="content-display">
-<span>{item}</span>
+{item} &#9639; 
          </div>
     )
 
