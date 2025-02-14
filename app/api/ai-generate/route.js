@@ -42,8 +42,6 @@ function prompt_gather(data) {
     return `${persona}. Your task is to design the following artifact: ${poster}. ${headline}. ${subhead}. ${chunk}`
 } 
 
-export default prompt_gather
-
 export async function POST(request) {
     const result = await request.json();
     const collection = {...result.data, user_type:"ai"}
