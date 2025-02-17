@@ -21,7 +21,7 @@ export default async function Home({searchParams}) {
       <ul>
 <li>The poster will be<p /> {level == 3 && <><Token category="vibe"/>… and </>}{level >=2 && <><Token category="action"/>… and also</>} <Token category="layout"/> &#9639;  </li>
       
-<li>The headline will be set in <FontCard category="headerfont" />{level >=2 && <>… but make the <Token category="langObject"/> <Token category="relation"/> the <Token category="attribute"/> &#9639;</>}  </li>
+<li>The headline will be set in <FontCard category="headerfont" />{level >=2 && <>… but make the <Token category="langObject"/> <Token category="relation"/> the <Token category="fontProperity"/> &#9639;</>}  </li>
       
 <li>The subhead will be <FontCard category="subheadfont"/>{level == 3 && <>… but also make it <Token category="relation"/> the <Token category="attribute"/> of the <Token category="content"/> &#9639;</>}  </li>
       </ul>

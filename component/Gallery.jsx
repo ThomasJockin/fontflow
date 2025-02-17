@@ -6,7 +6,7 @@ async function Gallery({}){
 
 let { data: fontprompts, error } = await supabase
   .from('fontprompts')
-  .select('*').order("id",{ascending:false})
+  .select('*').order("uploaded_file_at",{ascending:false})
     
     
 return (
