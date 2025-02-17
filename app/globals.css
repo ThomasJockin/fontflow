@@ -140,6 +140,24 @@ display: block;
     
 }
 
+.rd2 {
+    color: var(--background);
+-webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: transparent;
+    background-color:yellowgreen;
+    background-clip: text;
+    
+}
+
+.rd3 {
+    color: var(--background);
+-webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: transparent;
+    background-color:coral;
+    background-clip: text;
+    
+}
+
 @keyframes blink {
     from { opacity: 100%;}
     
