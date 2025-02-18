@@ -30,11 +30,11 @@ function GalleryCard(prompt) {
             </div>
             <div className="gallery-text">
                 <span className="BigLetter">Aa</span>
-                <label>Headline: </label>{prompt.header_font} but make the {prompt.langObject} {prompt.relation} the {prompt.attribute}
+                <label>Headline: </label>{prompt.header_font} but make the {prompt.lang_object} {prompt.relation} the {prompt.attribute}
             </div>
             <div className="gallery-text">
                 <span className="SmallLetter">Aa</span>
-                <label>Subhead: </label>{prompt.subhead_font} but also make it {prompt.relation} the {prompt.fontProperty} of the {prompt.content}
+                <label>Subhead: </label>{prompt.subhead_font} but also make it {prompt.relation} the {prompt.font_property} of the {prompt.content}
             </div>
         </div>
     );
