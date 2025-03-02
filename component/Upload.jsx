@@ -55,7 +55,7 @@ function WorkUpload() {
             <label className="lv-1" htmlFor="file">
                 {loading ? "Uploading..." : "Upload your Work"}
             </label>
-            <input className="custom-file-input" id="file" type="file" onChange={upload} />
+            <input disabled={loading} className="custom-file-input" id="file" type="file" onChange={upload} />
         </div>
     );
 }

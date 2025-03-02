@@ -201,11 +201,17 @@ display: block;
 }
 
 
+input:disabled {
+        cursor: wait;
+    }
+    
+
 .custom-file-input::-webkit-file-upload-button {
   visibility:hidden;
     position: absolute;
     left:0px;
     cursor: pointer;
+    
 }
 
 .custom-file-input::before {
@@ -220,8 +226,11 @@ display: block;
   font-size: .8rem;
     margin-right: 0;
     
+    &:disabled {
+        cursor: wait;
+    }
     
-    &::hover::before {
+    &:hover::before {
     transition: all ease-in 0.125s;
     transform: scale(95%);
     }
@@ -473,7 +482,7 @@ span.SmallLetter {
     filter:drop-shadow(0 0 .25rem lightgrey);
     
     &:hover {
-        cursor: pointer;
+        cursor: none;
         background-color: white;
         border: 1px solid aquamarine;
         transition: all 0.125s;
