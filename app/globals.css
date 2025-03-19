@@ -29,6 +29,49 @@ body {
     margin-bottom: 2rem;
 }
 
+nav {
+    color: lightgrey;
+    font-family: monospace;
+    font-size: .8rem;
+    letter-spacing: 1px;
+    text-align: right;
+    padding-right: 1rem;
+    position: sticky;
+    top: 1rem;
+    z-index: 999;
+    
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+nav > a {
+    
+    background-color: var(--background);
+    border: 1px solid lightgrey;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    border-radius: .5rem;
+filter:drop-shadow(0 0 1rem var--background);
+    
+    &:hover {
+        color: var(--foreground);
+        filter:drop-shadow(0 0 .0625rem aqua);
+        transform: scale(2);
+        transition: all 0.25s ease-in;
+    }
+}
+
+img.icon {
+    width: 12px;
+    height: auto;
+    display: inline;
+    vertical-align: middle;
+    padding-left: .125rem;
+}
+
 button {
     border: 1px solid lightgrey;
     border-radius: 0.5rem;
@@ -637,3 +680,67 @@ ul:hover > .item {
     transition: all .5s ease-out;
     filter: blur(0);
     }
+
+.blog-p {
+    width: 800px;
+    color: gray;
+    font-size: 1.4rem;
+    line-height: 2.1rem;
+    letter-spacing: .25px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 1.25rem;
+    padding-bottom: 1.5rem;
+    padding-left: 1.75rem;
+    padding-right: 1.5rem;
+
+}
+
+.blog-subhead {
+    font-size: 2.4rem;
+    letter-spacing: 1px;
+    color: gray;
+    letter-spacing: -1px;
+    font-weight: bold;
+    line-height: 2.8rem;
+    text-align: center;
+    
+    @media screen and (max-width:1020px) {
+        font-size: 2rem;
+        line-height: 2.3rem;
+    }
+    
+}
+
+.blog-section {
+    font-size: 0.8rem;
+    font-family: monospace;
+    letter-spacing: 1px;
+    color: gray;
+    letter-spacing: 1px;
+    font-weight: normal;
+    line-height: 2rem;
+    text-align: center;  
+}
+
+.blog-list {
+    width: 400px;
+    background-color: var(--background);
+    border: 1px solid lightgray; 
+    border-radius: 1rem;
+    margin-top: .5rem;
+    margin-bottom: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 1.25rem;
+    padding-bottom: 0.75rem;
+    padding-left: 1.75rem;
+    padding-right: 1.5rem;
+    filter:drop-shadow(0 0 .125rem lightgrey);
+    
+    &:hover {
+          filter:drop-shadow(0 0 .125rem aqua); 
+        transition: filter 1s ease-in;
+    }
+}
+
