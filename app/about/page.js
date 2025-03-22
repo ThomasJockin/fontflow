@@ -1,4 +1,6 @@
 import About from './about.mdx'
+import remark from 'remark';
+import html from 'remark-html';
  
 export default function Page() {
   return (

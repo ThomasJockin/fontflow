@@ -744,3 +744,82 @@ ul:hover > .item {
     }
 }
 
+.blog-img {
+    width: 80vw;
+    height: auto;
+    margin-left: auto;
+    margin-right:auto;
+}
+
+.blog-link {
+    border-bottom: 2px solid aqua;
+    font-weight: 400;
+    
+    &:hover {
+        color: darkturquoise;
+        transition: all 200ms ease;
+    }
+}
+
+.blog-quote {
+    border: 1px solid lightgray;
+    background-color: var(--background);
+    margin-left:30%;
+    margin-right:30%;
+    width:40%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    overflow: auto;
+    display: block;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+    filter:drop-shadow(0 0 .125rem lightgrey);
+      animation: scrollIn 1s ease-out;
+}
+
+.blog-quote:nth-of-type(even) {
+       margin-left:20%;
+    margin-right:40%; 
+}
+
+.blog-quote:nth-of-type(odd) {
+       margin-left:40%;
+    margin-right:20%; 
+}
+
+.blog-quote > h3.blog-section {
+    position: relative;
+    top: .5rem;
+    padding-left: 1.5rem;
+    padding-right:1.5rem;
+}
+
+.blog-quote > p {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 1.5rem;
+    padding-right:1.5rem;
+    width:100%;
+    color: lightgray;
+    
+    &:hover {
+        color: gray;
+    filter:blur(0px);
+        transition: all .5s ease;
+    }
+}
+
+.blog-quote > p > em {
+    font-family: sans-serif;
+    font-style: normal;
+    background-color: lightcyan;
+    padding-top: .25rem;
+    padding-bottom: .25rem;
+    padding-left: .5rem;
+    padding-right:.5rem;
+    border-radius: 0.5rem;
+    color: gray;
+    filter:blur(0px);
+}
+
