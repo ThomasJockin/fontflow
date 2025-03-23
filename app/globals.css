@@ -317,6 +317,10 @@ div.level {
     background-color: var(--background);
     border: 1px solid lightgray;
     border-radius: 1rem;
+    animation: scrollIn 0.1s ease-out forwards;
+    animation-timeline: view();
+    animation-range: contain -60vh;
+    transform-origin: top center;
 }
 
 div.level ul {
@@ -523,6 +527,7 @@ span.SmallLetter {
     transform: scale(100%);
     font-size: .8rem;
     filter:drop-shadow(0 0 .25rem lightgrey);
+
     
     &:hover {
         cursor: none;
@@ -608,6 +613,12 @@ span.SmallLetter {
     overflow-x: hidden;
 }
 
+@keyframes scrollUp {
+    from { transform: translateY(50px); opacity: .5;}
+    to { transform: translateY(0px); opacity: 1;}
+    
+}
+
 div.galleryshow {
     width:300px;
     display: flex;
@@ -621,6 +632,9 @@ div.galleryshow {
     border: 1px solid lightgrey;
     border-radius: 1rem;
     overflow: hidden;
+    animation: scrollUp 0.1s ease-out forwards;
+    animation-timeline: view();
+    transform-origin: top center;
 }
 
 
@@ -737,6 +751,10 @@ ul:hover > .item {
     padding-left: 1.75rem;
     padding-right: 1.5rem;
     filter:drop-shadow(0 0 .125rem lightgrey);
+        animation: scrollIn 0.1s ease-out forwards;
+    animation-timeline: view();
+    animation-range: cover;
+    transform-origin: top center;
     
     &:hover {
           filter:drop-shadow(0 0 .125rem aqua); 
@@ -761,6 +779,12 @@ ul:hover > .item {
     }
 }
 
+@keyframes scrollIn {
+    from { scale: 0.8; opacity: 0;}
+    to { scale: 1; opacity: 1;}
+    
+}
+
 .blog-quote {
     border: 1px solid lightgray;
     background-color: var(--background);
@@ -775,12 +799,16 @@ ul:hover > .item {
     border-radius: 1rem;
     margin-bottom: 2rem;
     filter:drop-shadow(0 0 .125rem lightgrey);
-      animation: scrollIn 1s ease-out;
+    opacity: 0;
+    animation: scrollIn 1s ease-out forwards;
+    animation-timeline: view();
+    transform-origin: bottom center;
 }
 
 .blog-quote:nth-of-type(even) {
        margin-left:20%;
     margin-right:40%; 
+    
 }
 
 .blog-quote:nth-of-type(odd) {
@@ -801,13 +829,7 @@ ul:hover > .item {
     padding-left: 1.5rem;
     padding-right:1.5rem;
     width:100%;
-    color: lightgray;
-    
-    &:hover {
-        color: gray;
-    filter:blur(0px);
-        transition: all .5s ease;
-    }
+    color: gray;
 }
 
 .blog-quote > p > em {
