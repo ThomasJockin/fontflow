@@ -43,6 +43,12 @@ nav {
     &:hover {
         cursor: pointer;
     }
+    
+    @media screen and (max-width:1020px){
+    margin-bottom: 2rem;
+    text-align: center;
+    padding-right: 0;
+    }
 }
 
 nav > a {
@@ -698,6 +704,7 @@ ul:hover > .item {
 .blog-p {
     width: 800px;
     color: gray;
+    hyphens: auto;
     font-size: 1.4rem;
     line-height: 2.1rem;
     letter-spacing: .25px;
@@ -707,6 +714,14 @@ ul:hover > .item {
     padding-bottom: 1.5rem;
     padding-left: 1.75rem;
     padding-right: 1.5rem;
+    
+        @media screen and (max-width:1020px){
+            width: 95vw;
+            hyphens: auto;
+            text-wrap: pretty;
+            padding-left: auto;
+            padding-right: auto;
+    }
 
 }
 
@@ -720,6 +735,8 @@ ul:hover > .item {
     text-align: center;
     
     @media screen and (max-width:1020px) {
+        width: 95vw;
+        text-wrap: pretty;
         font-size: 2rem;
         line-height: 2.3rem;
     }
@@ -731,10 +748,19 @@ ul:hover > .item {
     font-family: monospace;
     letter-spacing: 1px;
     color: gray;
-    letter-spacing: 1px;
     font-weight: normal;
     line-height: 2rem;
-    text-align: center;  
+    text-align: center;
+    padding-right: auto;
+    padding-left: auto; 
+    
+            @media screen and (max-width:1020px)
+            {
+            hyphens: auto;
+            text-wrap: pretty;
+            line-height: 1.5rem;
+
+    }
 }
 
 .blog-list {
@@ -796,6 +822,7 @@ ul:hover > .item {
     white-space: normal;
     overflow: auto;
     display: block;
+    position: relative;
     border-radius: 1rem;
     margin-bottom: 2rem;
     filter:drop-shadow(0 0 .125rem lightgrey);
@@ -803,17 +830,40 @@ ul:hover > .item {
     animation: scrollIn 1s ease-out forwards;
     animation-timeline: view();
     transform-origin: bottom center;
+    
+        @media screen and (max-width:1020px)
+            {
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto; 
+            hyphens: auto;
+            text-wrap: pretty;
+
+    }
+    
 }
 
 .blog-quote:nth-of-type(even) {
        margin-left:20%;
     margin-right:40%; 
     
+            
+    @media screen and (max-width:1020px)
+            {
+            margin-left: auto;
+            margin-right: auto; 
+    }
+    
 }
 
 .blog-quote:nth-of-type(odd) {
        margin-left:40%;
     margin-right:20%; 
+    @media screen and (max-width:1020px)
+            {
+            margin-left: auto;
+            margin-right: auto; 
+    }
 }
 
 .blog-quote > h3.blog-section {
