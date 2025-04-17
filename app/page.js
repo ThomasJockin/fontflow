@@ -11,7 +11,7 @@ export default async function Home({searchParams}) {
     const level = parms.level
   return (
       <div id="top">
-      <nav><a href="#">MFA Thesis <img src="/download-icon.svg" alt="download" className="icon" /></a> <a href="about/">About <img src="/about-icon.svg" alt="about" className="icon" /></a></nav>
+      <nav><a href="/Thesis.pdf">MFA Thesis <img src="/download-icon.svg" alt="download" className="icon" /></a> <a href="about/">About <img src="/about-icon.svg" alt="about" className="icon" /></a></nav>
       <div className="header">
       <h1>FontFlow Sprints.</h1>
       <h2>Find your font pairing flow in 90-minute design sprints.</h2> 
