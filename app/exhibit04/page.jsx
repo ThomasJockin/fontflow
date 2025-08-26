@@ -4,7 +4,7 @@ import {useState} from "react";
  
 export default function Page() {
      const [userAnswer, storeAnswer] = useState(null);
-    const check = userAnswer === prompt.user_type;
+const check = userAnswer === "human";
     
     let response = "img-item"; // Default class
     if (userAnswer === null) {
@@ -21,10 +21,10 @@ export default function Page() {
     }
 
     if (choice === actualAnswer) {
-        return <div><label className="exhibitanswer">Correct. This is <strong>{actualAnswer} made by Miguel Escamilla</strong>.</label></div>;
+        return <div><label className="exhibitanswer">Correct. This is <strong>{actualAnswer} made by Kateryna Kovalevska</strong>.</label></div>;
     }
 
-    return <div><label className="exhibitanswer">Nope. This is <strong>{actualAnswer} made by Miguel Escamilla</strong>. </label></div>;
+    return <div><label className="exhibitanswer">Nope. This is <strong>{actualAnswer} made by Kateryna Kovalevska</strong>. </label></div>;
 }
   return (
     <div className="exhibitshow">

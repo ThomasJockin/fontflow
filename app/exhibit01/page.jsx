@@ -4,7 +4,7 @@ import {useState} from "react";
  
 export default function Page() {
      const [userAnswer, storeAnswer] = useState(null);
-    const check = userAnswer === prompt.user_type;
+const check = userAnswer === "human";
     
     let response = "img-item"; // Default class
     if (userAnswer === null) {
