@@ -643,6 +643,26 @@ div.galleryshow {
     transform-origin: top center;
 }
 
+div.exhibitshow {
+    margin-inline: auto;
+    width: 90%;
+    height: 75vh;
+        border-radius: 1rem;
+    margin-top: 3rem;
+     padding-left: 2rem;
+    padding-right:2rem;
+    padding-top: 2rem;
+    padding-bottom:2rem;
+    border: 1px solid lightgrey;
+    
+}
+
+label.exhibitanswer {
+  font-family: "Space Mono", sans-serif;
+    font-size: 3rem;
+    line-height: 4rem;
+}
+
 
 input.textinput {
     background-color: aliceblue;
